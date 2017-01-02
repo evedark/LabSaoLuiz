@@ -13,7 +13,7 @@ if(trim($un)!="Your Name" && trim($msg)!="Your message" && trim($em)!="Your Emai
 		
 		$headers = "MIME-Version: 1.0" . "\r\n";
 		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-		$headers .= 'From: <luadiass@live.com>' . "\r\n";
+		$headers .= 'From: <contato@labsaoluiz.com>' . "\r\n";
 
 		if(mail('luana@labsaoluiz.com','Pergunta para Laboratório São Luis',$message,$headers ))
 		{
