@@ -156,8 +156,14 @@
           <div class="col-lg-6 col-md-5 col-sm-12">
             <h4 class="hs_heading" id="hs_appointment_form_link">Resultados de Exames</h4>
             <div class="hs_tab">
-            <div class="hs_appointment_form_div"> <img src="images/results.png" width="512" height="345" alt=""/>
-              <div class="hs_appointment_form" id="pacientes">
+              <ul id="myTab" class="nav nav-tabs">
+                <li class="active"><a href="#pacientes" data-toggle="tab">Pacientes</a></li>
+                <li><a href="#medicos" data-toggle="tab">Médicos</a></li>
+                <li><a href="#convenios" data-toggle="tab">Convênios</a></li>
+                <li><a href="#clinicas" data-toggle="tab">Clínicas</a></li>
+              </ul>
+            <div id="myTabContent" class="tab-content">
+              <div class="tab-pane fade in active" id="pacientes">
                 <form id="resultados_clientes" name="resultados_clientes" method="post" action="" class="" OnSubmit="javascript:return false;">
                   <div class="row">
                     <div class="col-lg-6 col-md-7 col-sm-6">
@@ -175,14 +181,83 @@
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-8">
                       <p>Pegue seus resultados aqui.</p>
-                    </div>
                   </div>
                   <p id="appointment_err"></p>
                 </form>
+                </div>
               </div>
+              <div class="tab-pane fade" id="medicos">
+                <form id="resultados_clientes" name="resultados_clientes" method="post" action="" class="" OnSubmit="javascript:return false;">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-7 col-sm-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="protocolo" name="protocolo" placeholder="Registro" required>
+                      </div>
+                      <div class="form-group">
+                        <input type="password" id="senha" name="senha" class="form-control"  placeholder="Senha" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-3">
+                      <button type="button" id="slider_book_apo" class="btn btn-default" onClick="entrega_resultado_medico()">Acessar</button>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8">
+                      <p>Pegue seus resultados aqui.</p>
+                  </div>
+                  <p id="appointment_err"></p>
+                </form>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="convenios">
+                <form id="resultados_clientes" name="resultados_clientes" method="post" action="" class="" OnSubmit="javascript:return false;">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-7 col-sm-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="protocolo" name="protocolo" placeholder="Usuário" required>
+                      </div>
+                      <div class="form-group">
+                        <input type="password" id="senha" name="senha" class="form-control"  placeholder="Senha" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-3">
+                      <button type="button" id="slider_book_apo" class="btn btn-default" onClick="entrega_resultado_conveniado()">Acessar</button>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8">
+                      <p>Pegue seus resultados aqui.</p>
+                  </div>
+                  <p id="appointment_err"></p>
+                </form>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="clinicas">
+                <form id="resultados_clientes" name="resultados_clientes" method="post" action="" class="" OnSubmit="javascript:return false;">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-7 col-sm-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="protocolo" name="protocolo" placeholder="Usuário" required>
+                      </div>
+                      <div class="form-group">
+                        <input type="password" id="senha" name="senha" class="form-control"  placeholder="Senha" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-3">
+                      <button type="button" id="slider_book_apo" class="btn btn-default" onClick="entrega_resultado()">Acessar</button>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8">
+                      <p>Pegue seus resultados aqui.</p>
+                  </div>
+                  <p id="appointment_err"></p>
+                </form>
+                </div>
               </div>
             </div>
           </div>
+        </div>
           <!--Book an Appointment end--> 
         </div>
       </div>
@@ -468,7 +543,7 @@
                 <div class="col-lg-7 col-md-6 col-sm-12"> <img src=images/slider/Optimum-Clinical-Research-photo.jpg alt="" /> </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
                   <div class="hs_how_we_are_text">
-                    <h4>Laboratório São Luiz é uma empresa montebelense, que em 2014 completou 30 anos de serviços prestados em nossa comunidade.</h4>
+                    <h4>Laboratório São Luiz é uma empresa montebelense, que em 2017 completa 33 anos de serviços prestados em nossa comunidade.</h4>
                       </br>
                         </br>
                     <p>Contamos com uma nova geração de profissionais que aliados à experiência já existente e ao permanente investimento em todas as áreas,
@@ -635,6 +710,7 @@ como nos equipamentos, controle de qualidade e atendimento, trabalha para oferec
 <!--main js file start--> 
 <script type="text/javascript" src="/js/medico.js"></script>
 <script type="text/javascript" src="/js/resultado.js"></script>
+<script type="text/javascript" src="/js/convenio.js"></script>
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script> 
 <script type="text/javascript" src="js/bootstrap.js"></script> 
 <script type="text/javascript" src="js/owl.carousel.js"></script> 
